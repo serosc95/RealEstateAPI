@@ -1,0 +1,70 @@
+    ## .NET Core ##
+# User-specific files
+.idea/
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer logs
+*.cab
+*.log
+
+# Windows Installer executables
+*.exe
+*.dll
+*.pdb
+*.config
+*.vspscc
+*.vssscc
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build Folders (bin/obj)
+bin/
+obj/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# .vs directory (Visual Studio)
+.vs/
+
+# Rider IDE
+.idea/
+
+# JetBrains Rider
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Project files
+project.lock.json
+project.fragment.lock.json
+
+# Node.js
+node_modules/
+
+# .NET Core packages
+.nuget/
+
+# ASP.NET Core
+appsettings.Development.json
+appsettings.json
+
+# User-specific Visual Studio Code settings
+.vscode/
+
+# End of .NET Core
+
