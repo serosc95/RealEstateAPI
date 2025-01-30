@@ -6,6 +6,7 @@ using MongoDB.Driver;
 
 
 var builder = WebApplication.CreateBuilder(args);
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var mongoSettings = builder.Configuration.GetSection("MongoDB");
 
 // Obtener la cadena de conexión y el nombre de la base de datos
@@ -30,11 +31,24 @@ builder.Services.AddSingleton<IMongoDatabase>(database);
 builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
 builder.Services.AddScoped<IPropertyService, PropertyService>();
 
+// Configurar CORS para permitir cualquier origen
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
+app.UseCors(MyAllowSpecificOrigins);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
-{   
+{
     app.UseSwagger();
     app.UseSwaggerUI();
 }
