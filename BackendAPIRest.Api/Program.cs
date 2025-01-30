@@ -28,7 +28,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddSingleton<IMongoDatabase>(database);
 builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
-builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
+builder.Services.AddScoped<IPropertyService, PropertyService>();
 
 var app = builder.Build();
 
